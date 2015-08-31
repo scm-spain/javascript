@@ -40,6 +40,18 @@
       return <div />;
     }
   }
+  
+  // better (stateless functions, react 0.14 and up only)
+  // https://github.com/reactjs/react-future/blob/master/01%20-%20Core/03%20-%20Stateless%20Functions.js
+  function Checkbox({ checked = true, width }) {
+    return (
+      <div>
+        Fancy checkbox
+        <input type="checkbox" checked={checked} style={{ width }} />
+      </div>
+    );
+  }
+  
   ```
 
 ## Naming
