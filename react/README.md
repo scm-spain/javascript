@@ -28,18 +28,33 @@
 
   ```javascript
   // bad
-  const Listing = React.createClass({
+  const Checkbox = React.createClass({
     render() {
-      return <div />;
+      <div>
+        <input type="checkbox" checked={this.props.checked} />
+      </div>
     }
   });
 
   // good
-  class Listing extends React.Component {
+  class Checkbox extends React.Component {
     render() {
-      return <div />;
+      <div>
+        <input type="checkbox" checked={this.props.checked} />
+      </div>
     }
   }
+  
+  // better (stateless functions, react 0.14 and up only)
+  // https://github.com/reactjs/react-future/blob/master/01%20-%20Core/03%20-%20Stateless%20Functions.js
+  const Checkbox = ({ checked = false }) => {
+    return (
+      <div>
+        <input type="checkbox" checked={checked} />
+      </div>
+    );
+  };
+  
   ```
 
 ## Naming
